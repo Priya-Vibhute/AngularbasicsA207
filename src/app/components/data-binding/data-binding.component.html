@@ -1,0 +1,49 @@
+<h4>Data Binding</h4>
+<ul>
+  <li>One way data binding</li>
+  <ol>
+    <li>Interpolation</li>
+    <div class="container">
+      <p>{{ name }}</p>
+      <p>{{ 5 + 5 }}</p>
+    </div>
+    <li>Event Binding</li>
+    <div class="container">
+      <button class="btn btn-primary" (click)="onBtnClick()">Click</button>
+    </div>
+    <li>Property Binding</li>
+    <div class="container">
+      <input type="text" [value]="name" />
+    </div>
+    <li>Style Binding</li>
+
+    <div class="container">
+      <p [style.color]="pColor">Hello</p>
+      <button class="btn btn-success" (click)="changeColor('green')">
+        Green
+      </button>
+
+      <button class="btn btn-danger" (click)="changeColor('red')">Red</button>
+
+      <button class="btn btn-warning" (click)="changeColor('yellow')">
+        Yellow
+      </button>
+
+      <div class="container w-25 bg-danger" style="height: 300px" 
+      [style.border-radius.px]="radiusSize"></div>
+
+      <input type="text" [(ngModel)]="radiusSize">
+
+      <button class="btn btn-success" (click)="changeRadiusSize('100')" >100px</button>
+      <button class="btn btn-danger"  (click)="changeRadiusSize('50')" >50px</button>
+      <button class="btn btn-warning" (click)="changeRadiusSize('90')" >90px</button>
+    </div>
+  </ol>
+  <li>Two way data binding</li>
+  <ol>
+    <li>NgModel</li>
+    <div class="container">
+      <input type="text" [(ngModel)]="name" />
+    </div>
+  </ol>
+</ul>

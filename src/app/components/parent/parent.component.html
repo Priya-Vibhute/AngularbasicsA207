@@ -1,0 +1,10 @@
+<p>parent works! </p>
+<p>Message is {{message}}</p>
+<app-child [receivedData]="data" (eventemitter)="receiveData($event)"></app-child>
+
+<hr>
+
+<app-product [id]="101" [name]="data" [price]="45000"></app-product>
+<app-product [id]="102" [name]="'Mobile'" [price]="35000"></app-product>
+<app-product [id]="103" [name]="'Tablet'" [price]="25000"></app-product>
+

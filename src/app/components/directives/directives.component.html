@@ -1,0 +1,26 @@
+<ul>
+    <li>Component</li>
+    <li>Structural Directives  ( ngIf ngFor ngSwitch)</li>
+    <li>Attribute Directives (ngClass ngStyle)</li>
+</ul>
+<hr>
+
+<p *ngIf="loggedIn;else elseBlock">You are logged In</p>
+<ng-template #elseBlock>
+    <p>You are logged out</p>
+</ng-template>
+
+<button class="btn btn-primary" (click)="toggleLogin()">Click</button>
+
+<hr>
+
+<ng-container *ngIf="loggedIn;then t1 else t2"></ng-container>
+
+<ng-template #t1>
+    <h1 class="bg-warning p-3 m-3">You are logged In</h1>
+    <app-product [id]="101" [name]="'Laptop'"></app-product>
+</ng-template>
+
+<ng-template #t2>
+    <h1 class="bg-warning p-3 m-3">You are logged out</h1>
+</ng-template>
