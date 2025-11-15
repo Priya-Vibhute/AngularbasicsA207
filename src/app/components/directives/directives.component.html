@@ -26,5 +26,67 @@
 </ng-template>
 
 <hr>
+<div class="row">
+    <div class="col-2">
+          <p *ngFor="let i of colors; let f=first" >
+            {{i}} <span class="badge bg-primary" *ngIf="f">Primary</span>
 
-<p *ngFor="let i of colors">{{i}}</p>
+        </p>
+    </div>
+    <div class="col" *ngFor="let s of students">
+          <div  class="bg-danger text-white p-3 m-3">
+              <p>Id : {{s.id}}</p>
+              <p>Name : {{s.name}}</p>
+              <p>Subjects : 
+                <span class="badge bg-light text-dark mx-1" *ngFor="let sub of s.subjects">{{sub}}</span>
+              </p>
+          </div>
+    </div>
+</div>
+
+
+<hr>
+
+<h4>ngClass</h4>
+
+<p [ngClass]="classes">Hello</p>
+
+<button class="btn btn-primary m-3" (click)="addClasses('bg-warning')">bg-warning</button>
+<button class="btn btn-primary m-3" (click)="addClasses('text-center')">text-center</button>
+<button class="btn btn-primary m-3" (click)="addClasses('p-3')">padding</button>
+
+<hr>
+
+<p [ngClass]="{'bg-danger':false,'bg-success':true}">Hello</p>
+<hr>
+
+<div class="card m-3" style="max-width: 18rem;"
+     [ngClass]="{'bg-dark':darktheme,'text-white':darktheme,'bg-light':!darktheme,'text-dark':!darktheme}"
+ >
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Primary card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="changeTheme()">Change Theme</button>
+
+
+<hr>
+
+<h1>ngStyle</h1>
+
+<p [ngStyle]="style">Hello g</p>
+<button class="btn btn-primary" (click)="styles('S1')">Change Theme</button>
+<button class="btn btn-primary" (click)="styles('S2')">Change Theme</button>
+
+
+
+
+
+
+
+
+
+
