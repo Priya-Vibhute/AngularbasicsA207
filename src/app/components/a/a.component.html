@@ -1,0 +1,12 @@
+<p>a works!</p>
+<h1>{{count}}</h1>
+<button class="btn btn-primary m-2" (click)="increment()">Increment</button>
+<hr>
+<app-b [receivedData]="data" *ngIf="count!=10"></app-b>
+
+
+<button class="btn btn-primary m-2" (click)="changeData('A')">A</button>
+<button class="btn btn-primary m-2" (click)="changeData('B')">B</button>
+<button class="btn btn-primary m-2" (click)="changeData('C')">C</button>
+<button class="btn btn-primary m-2" (click)="changeData('D')">D</button>
+

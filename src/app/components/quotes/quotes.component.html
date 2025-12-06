@@ -1,0 +1,28 @@
+
+
+<button class="btn btn-primary m-3" (click)="filterByAuthorName('Abdul Kalam')">Abdul Kalam</button>
+<button class="btn btn-primary m-3" (click)="filterByAuthorName('Rumi')">Rumi</button>
+<button class="btn btn-primary m-3"(click)="filterByAuthorName('Bill Gates')">Bill Gates</button>
+<button class="btn btn-primary m-3" (click)="getAllQuotes()">All Quotes</button>
+
+
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">quote</th>
+            <th scope="col">author</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let quote of quotes.quotes">
+            <th scope="row">{{quote.id}}</th>
+            <td>{{quote.quote}}</td>
+            <td>{{quote.author}}</td>
+        </tr>
+        
+    </tbody>
+</table>
